@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dwayne "The Rock" Johnson | Fan Page</title>
+
+    <style>
+        /* =========================
+           GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #101010;
+            color: white;
+            line-height: 1.6;
+
+            transition:
+                background 0.5s ease,
+                color 0.5s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            background: rgba(0, 0, 0, 0.95);
+
+            border-bottom: 2px solid #e6b800;
+
+            z-index: 1000;
+
+            transition: 0.5s;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 15px 0;
+
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+
+            font-weight: bold;
+
+            color: #e6b800;
+
+            transition: 0.5s;
+        }
+
+        .nav-links {
+            display: flex;
+
+            list-style: none;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -6px;
+
+            width: 0;
+            height: 2px;
+
+            background: #e6b800;
+
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e6b800;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           THEME SWITCHER BUTTON
+        ========================== */
+
+        .theme-btn {
+            background: transparent;
+
+            color: #e6b800;
+
+            border: 2px solid #e6b800;
+
+            padding: 9px 14px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            white-space: nowrap;
+
+            transition: 0.3s;
+        }
+
+        .theme-btn:hover {
+            background: #e6b800;
+
+            color: #111;
+
+            transform: scale(1.05);
+
+            box-shadow: 0 0 15px #e6b800;
+        }
+
+        .theme-btn:active {
+            transform: scale(0.95);
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            background:
+                linear-gradient(90deg,
+                    rgba(0, 0, 0, 0.95),
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.25)),
+                url("https://commons.wikimedia.org/wiki/Special:FilePath/Dwayne_%27The_Rock%27_Johnson_2016.jpg");
+
+            background-size: cover;
+
+            background-position: center 20%;
+
+            transition: 0.5s;
+        }
+
+        .hero-content {
+            max-width: 650px;
+
+            padding-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+
+            line-height: 0.95;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #e6b800;
+
+            transition: 0.5s;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+
+            color: #ddd;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           GENERAL BUTTON
+        ========================== */
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            background: #e6b800;
+
+            color: #111;
+
+            font-weight: bold;
+
+            border: none;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s,
+                background 0.3s,
+                box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(230, 184, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: scale(0.92);
+        }
+
+
+        /* =========================
+           HERO BUTTON ANIMATION
+        ========================== */
+
+        .hero-btn:hover {
+            animation: buttonPulse 0.8s infinite alternate;
+        }
+
+        @keyframes buttonPulse {
+
+            from {
+                box-shadow: 0 0 5px #e6b800;
+            }
+
+            to {
+                box-shadow: 0 0 25px #e6b800;
+            }
+
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 90px 0;
+
+            transition:
+                background 0.5s ease;
+        }
+
+        .section-title {
+            text-align: center;
+
+            font-size: 2.5rem;
+
+            margin-bottom: 50px;
+
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            color: #e6b800;
+
+            transition: 0.5s;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: #181818;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .about-image {
+            height: 500px;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            border: 3px solid #e6b800;
+
+            transition: 0.5s;
+        }
+
+        .about-image:hover {
+            transform: scale(1.02);
+
+            box-shadow:
+                0 0 25px rgba(230, 184, 0, 0.25);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            transition: 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+
+            color: #e6b800;
+
+            margin-bottom: 20px;
+
+            transition: 0.5s;
+        }
+
+        .about-text p {
+            color: #ccc;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           FACTS
+        ========================== */
+
+        .facts {
+            background: #101010;
+        }
+
+        .facts-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .fact-card {
+            background: #1d1d1d;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            border-left: 4px solid #e6b800;
+
+            transition:
+                transform 0.3s,
+                background 0.3s,
+                box-shadow 0.3s;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-10px);
+
+            background: #252525;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .fact-icon {
+            font-size: 2.5rem;
+
+            margin-bottom: 15px;
+        }
+
+        .fact-card h3 {
+            color: #e6b800;
+
+            margin-bottom: 10px;
+
+            transition: 0.5s;
+        }
+
+        .fact-card p {
+            color: #bbb;
+        }
+
+
+        /* =========================
+           FACT GENERATOR
+        ========================== */
+
+        .fact-generator {
+            background: #181818;
+
+            text-align: center;
+        }
+
+        .fact-box {
+            max-width: 800px;
+
+            margin: auto;
+
+            background: #101010;
+
+            padding: 45px 30px;
+
+            border-radius: 12px;
+
+            border: 2px solid #e6b800;
+
+            box-shadow:
+                0 0 30px rgba(230, 184, 0, 0.08);
+
+            transition: 0.5s;
+        }
+
+        .fact-box h3 {
+            color: #e6b800;
+
+            font-size: 2rem;
+
+            margin-bottom: 20px;
+
+            transition: 0.5s;
+        }
+
+        #random-fact {
+            min-height: 70px;
+
+            color: #ddd;
+
+            font-size: 1.2rem;
+
+            margin-bottom: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        #random-fact.show {
+            animation:
+                factReveal 0.6s ease;
+        }
+
+        @keyframes factReveal {
+
+            0% {
+                opacity: 0;
+
+                transform:
+                    translateY(20px) scale(0.95);
+            }
+
+            60% {
+                transform:
+                    translateY(-5px) scale(1.02);
+            }
+
+            100% {
+                opacity: 1;
+
+                transform:
+                    translateY(0) scale(1);
+            }
+
+        }
+
+
+        /* =========================
+           ROCK FACT BUTTON
+        ========================== */
+
+        .btn-rock:hover {
+            animation:
+                rockShake 0.4s ease;
+
+            box-shadow:
+                0 0 25px #e6b800;
+        }
+
+        @keyframes rockShake {
+
+            0% {
+                transform:
+                    rotate(0deg) scale(1.08);
+            }
+
+            25% {
+                transform:
+                    rotate(-3deg) scale(1.08);
+            }
+
+            50% {
+                transform:
+                    rotate(3deg) scale(1.08);
+            }
+
+            75% {
+                transform:
+                    rotate(-2deg) scale(1.08);
+            }
+
+            100% {
+                transform:
+                    rotate(0deg) scale(1.08);
+            }
+
+        }
+
+
+        /* =========================
+           KNOW YOUR ROLE
+        ========================== */
+
+        .rock-quote {
+            margin-top: 35px;
+
+            text-align: center;
+        }
+
+        .btn-role {
+            background: transparent;
+
+            color: #e6b800;
+
+            border: 2px solid #e6b800;
+
+            padding: 14px 28px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn-role:hover {
+            background: #e6b800;
+
+            color: #111;
+
+            transform: translateY(-5px);
+        }
+
+        .btn-role:active {
+            transform: translateY(2px);
+        }
+
+        #rock-message {
+            min-height: 50px;
+
+            margin-top: 20px;
+
+            color: white;
+
+            font-size: 1.4rem;
+
+            font-weight: bold;
+
+            opacity: 0;
+
+            transform: scale(0.5);
+
+            transition: 0.5s;
+        }
+
+        #rock-message.show {
+            opacity: 1;
+
+            transform: scale(1);
+
+            animation:
+                championBounce 0.7s;
+        }
+
+        @keyframes championBounce {
+
+            0% {
+                transform: scale(0.5);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* =========================
+           CAREER TIMELINE
+        ========================== */
+
+        .career {
+            background: #101010;
+        }
+
+        .timeline {
+            max-width: 900px;
+
+            margin: auto;
+
+            border-left: 3px solid #e6b800;
+
+            padding-left: 30px;
+
+            transition: 0.5s;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            width: 15px;
+            height: 15px;
+
+            background: #e6b800;
+
+            border-radius: 50%;
+
+            left: -39px;
+
+            top: 5px;
+
+            transition: 0.5s;
+        }
+
+        .timeline-item h3 {
+            color: #e6b800;
+
+            margin-bottom: 5px;
+
+            transition: 0.5s;
+        }
+
+        .timeline-item p {
+            color: #ccc;
+        }
+
+
+        /* =========================
+           WRESTLING
+        ========================== */
+
+        .wrestling-highlight {
+            margin-top: 60px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 30px;
+
+            align-items: center;
+        }
+
+        .wrestling-image {
+            height: 350px;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            border: 2px solid #e6b800;
+
+            transition: 0.5s;
+        }
+
+        .wrestling-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .wrestling-image:hover img {
+            transform: scale(1.06);
+        }
+
+        .wrestling-text h3 {
+            color: #e6b800;
+
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+
+            transition: 0.5s;
+        }
+
+        .wrestling-text p {
+            color: #ccc;
+        }
+
+
+        /* =========================
+           MOVIES
+        ========================== */
+
+        .movies {
+            background: #181818;
+        }
+
+        .movie-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .movie {
+            background: #101010;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+        }
+
+        .movie:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .movie-image {
+            height: 260px;
+
+            overflow: hidden;
+        }
+
+        .movie-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.4s;
+        }
+
+        .movie:hover .movie-image img {
+            transform: scale(1.07);
+        }
+
+        .movie-content {
+            padding: 20px;
+        }
+
+        .movie-content h3 {
+            color: #e6b800;
+
+            margin-bottom: 8px;
+
+            transition: 0.5s;
+        }
+
+        .movie-content p {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           FAN ZONE
+        ========================== */
+
+        .fan-section {
+            background: #101010;
+        }
+
+        .fan-box {
+            max-width: 700px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .fan-box p {
+            color: #ccc;
+
+            margin-bottom: 25px;
+        }
+
+        textarea {
+            width: 100%;
+
+            min-height: 130px;
+
+            padding: 15px;
+
+            border-radius: 5px;
+
+            border: 2px solid #333;
+
+            resize: vertical;
+
+            margin-bottom: 15px;
+
+            font-family: inherit;
+
+            transition: 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+
+            border-color: #e6b800;
+
+            box-shadow:
+                0 0 10px rgba(230, 184, 0, 0.2);
+        }
+
+        #message-result {
+            margin-top: 20px;
+
+            color: #e6b800;
+
+            font-weight: bold;
+
+            opacity: 0;
+
+            transform: translateY(10px);
+
+            transition: 0.4s;
+        }
+
+        #message-result.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           FAN BUTTON
+        ========================== */
+
+        .fan-btn:hover {
+            animation:
+                fanBounce 0.5s;
+        }
+
+        @keyframes fanBounce {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-8px);
+            }
+
+            60% {
+                transform: translateY(3px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           IMAGE CREDITS
+        ========================== */
+
+        .image-credits {
+            background: #0b0b0b;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 0.85rem;
+        }
+
+        .image-credits a {
+            color: #e6b800;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            background: #000;
+
+            color: #888;
+
+            transition: 0.5s;
+        }
+
+        footer strong {
+            color: #e6b800;
+
+            transition: 0.5s;
+        }
+
+
+        /* =================================================
+           ELECTRIC MODE
+        ================================================= */
+
+        body.electric-mode {
+            background: #071a2b;
+        }
+
+        body.electric-mode nav {
+            border-bottom-color: #00d9ff;
+        }
+
+        body.electric-mode .logo {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .nav-links a:hover {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .nav-links a::after {
+            background: #00d9ff;
+        }
+
+        body.electric-mode .hero h1 span {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .about,
+        body.electric-mode .fact-generator,
+        body.electric-mode .movies {
+            background: #0b2942;
+        }
+
+        body.electric-mode .facts,
+        body.electric-mode .career,
+        body.electric-mode .fan-section {
+            background: #071a2b;
+        }
+
+        body.electric-mode .section-title span {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .about-image {
+            border-color: #00d9ff;
+        }
+
+        body.electric-mode .about-text h3 {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .fact-card {
+            border-left-color: #00d9ff;
+        }
+
+        body.electric-mode .fact-card h3 {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .fact-box {
+            border-color: #00d9ff;
+        }
+
+        body.electric-mode .fact-box h3 {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .timeline {
+            border-left-color: #00d9ff;
+        }
+
+        body.electric-mode .timeline-item::before {
+            background: #00d9ff;
+        }
+
+        body.electric-mode .timeline-item h3 {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .wrestling-image {
+            border-color: #00d9ff;
+        }
+
+        body.electric-mode .wrestling-text h3 {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .movie-content h3 {
+            color: #00d9ff;
+        }
+
+        body.electric-mode #rock-message {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .image-credits a {
+            color: #00d9ff;
+        }
+
+        body.electric-mode footer strong {
+            color: #00d9ff;
+        }
+
+        body.electric-mode .theme-btn {
+            color: #00d9ff;
+
+            border-color: #00d9ff;
+        }
+
+        body.electric-mode .theme-btn:hover {
+            background: #00d9ff;
+
+            color: #071a2b;
+
+            box-shadow:
+                0 0 20px #00d9ff;
+        }
+
+        body.electric-mode .btn {
+            background: #00d9ff;
+        }
+
+        body.electric-mode .btn:hover {
+            background: white;
+
+            box-shadow:
+                0 0 20px #00d9ff;
+        }
+
+        body.electric-mode .btn-role {
+            color: #00d9ff;
+
+            border-color: #00d9ff;
+        }
+
+        body.electric-mode .btn-role:hover {
+            background: #00d9ff;
+
+            color: #071a2b;
+        }
+
+        body.electric-mode textarea:focus {
+            border-color: #00d9ff;
+
+            box-shadow:
+                0 0 10px rgba(0, 217, 255, 0.25);
+        }
+
+        body.electric-mode #message-result {
+            color: #00d9ff;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .nav-container {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .facts-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wrestling-highlight {
+                grid-template-columns: 1fr;
+            }
+
+            .movie-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav-container {
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            .nav-links {
+                gap: 12px;
+
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .movie-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         NAVIGATION
+    ================================================== -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <div class="logo">
+                THE ROCK
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#facts">
+                        Facts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#career">
+                        Career
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#movies">
+                        Movies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#fan">
+                        Fan Zone
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <button class="theme-btn" onclick="toggleTheme()">
+
+                ⚡ Electric Mode
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <header class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+
+                    Dwayne
+
+                    <br>
+
+                    <span>
+                        "The Rock"
+                    </span>
+
+                    <br>
+
+                    Johnson
+
+                </h1>
+
+
+                <p>
+
+                    From wrestling superstar to Hollywood
+                    icon, discover the journey of one of the
+                    world's most recognisable entertainers.
+
+                </p>
+
+
+                <a href="#about" class="btn hero-btn">
+
+                    Explore His Journey
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         ABOUT
+    ================================================== -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">
+
+                About
+
+                <span>
+                    The Rock
+                </span>
+
+            </h2>
+
+
+            <div class="about-grid">
+
+
+                <div class="about-image">
+
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dwayne_%27The_Rock%27_Johnson_2016.jpg"
+                        alt="Dwayne The Rock Johnson">
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <h3>
+                        Can You Smell What The Rock Is Cooking?
+                    </h3>
+
+
+                    <p>
+
+                        Dwayne Douglas Johnson, better known as
+                        "The Rock", is an American actor,
+                        professional wrestler, businessman and
+                        former football player.
+
+                    </p>
+
+
+                    <p>
+
+                        He first became famous through WWE,
+                        where his charisma, wrestling ability
+                        and memorable catchphrases helped make
+                        him one of professional wrestling's
+                        biggest stars.
+
+                    </p>
+
+
+                    <p>
+
+                        Johnson later made a successful transition
+                        into Hollywood, appearing in major
+                        franchises such as Fast & Furious and
+                        Jumanji.
+
+                    </p>
+
+
+                    <p>
+
+                        Today, he is recognised as an entertainer,
+                        entrepreneur, producer and philanthropist.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         INTERESTING FACTS
+    ================================================== -->
+
+    <section class="facts" id="facts">
+
+        <div class="container">
+
+            <h2 class="section-title">
+
+                Interesting
+
+                <span>
+                    Facts
+                </span>
+
+            </h2>
+
+
+            <div class="facts-grid">
+
+
+                <div class="fact-card">
+
+                    <div class="fact-icon">
+                        🏈
+                    </div>
+
+                    <h3>
+                        Football Background
+                    </h3>
+
+                    <p>
+
+                        Johnson played college football at
+                        the University of Miami before
+                        pursuing professional wrestling.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fact-card">
+
+                    <div class="fact-icon">
+                        🤼
+                    </div>
+
+                    <h3>
+                        Rocky Maivia
+                    </h3>
+
+                    <p>
+
+                        He originally competed in WWE under
+                        the name Rocky Maivia before becoming
+                        The Rock.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fact-card">
+
+                    <div class="fact-icon">
+                        🎬
+                    </div>
+
+                    <h3>
+                        Hollywood
+                    </h3>
+
+                    <p>
+
+                        His role as the Scorpion King in
+                        The Mummy Returns helped launch
+                        his acting career.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fact-card">
+
+                    <div class="fact-icon">
+                        💪
+                    </div>
+
+                    <h3>
+                        Fitness
+                    </h3>
+
+                    <p>
+
+                        Johnson is famous for his dedication
+                        to training and fitness.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fact-card">
+
+                    <div class="fact-icon">
+                        🍳
+                    </div>
+
+                    <h3>
+                        Cheat Meals
+                    </h3>
+
+                    <p>
+
+                        He is famous for sharing enormous
+                        cheat meals with his fans.
+
+                    </p>
+
+                </div>
+
+
+                <div class="fact-card">
+
+                    <div class="fact-icon">
+                        ❤️
+                    </div>
+
+                    <h3>
+                        Giving Back
+                    </h3>
+
+                    <p>
+
+                        Johnson has used his platform to
+                        support charitable causes and
+                        communities.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RANDOM FACT GENERATOR
+    ================================================== -->
+
+    <section class="fact-generator">
+
+        <div class="container">
+
+            <h2 class="section-title">
+
+                Rock
+
+                <span>
+                    Fact Generator
+                </span>
+
+            </h2>
+
+
+            <div class="fact-box">
+
+                <h3>
+                    How Well Do You Know The Rock?
+                </h3>
+
+
+                <p id="random-fact">
+
+                    Click the button below to discover
+                    a random fact about Dwayne Johnson!
+
+                </p>
+
+
+                <button class="btn btn-rock" onclick="generateFact()">
+
+                    🎲 Give Me A Rock Fact!
+
+                </button>
+
+
+                <div class="rock-quote">
+
+                    <button class="btn-role" onclick="revealRock()">
+
+                        🤨 Know Your Role
+
+                    </button>
+
+
+                    <div id="rock-message"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CAREER
+    ================================================== -->
+
+    <section class="career" id="career">
+
+        <div class="container">
+
+            <h2 class="section-title">
+
+                Career
+
+                <span>
+                    Journey
+                </span>
+
+            </h2>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        1996 — WWE Debut
+                    </h3>
+
+                    <p>
+
+                        Johnson made his WWE debut as
+                        Rocky Maivia.
+
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        1997–1999 — The Rock
+                    </h3>
+
+                    <p>
+
+                        Rocky Maivia evolved into "The Rock",
+                        becoming one of wrestling's biggest
+                        personalities.
+
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        2001 — Hollywood Breakthrough
+                    </h3>
+
+                    <p>
+
+                        Johnson appeared as the Scorpion King
+                        in The Mummy Returns.
+
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        2010s — Global Movie Star
+                    </h3>
+
+                    <p>
+
+                        Roles in Fast & Furious and Jumanji
+                        helped establish Johnson as a major
+                        Hollywood star.
+
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        Today — Business & Entertainment
+                    </h3>
+
+                    <p>
+
+                        Johnson continues working across
+                        entertainment, business, sports
+                        and philanthropy.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- WRESTLING FEATURE -->
+
+            <div class="wrestling-highlight">
+
+
+                <div class="wrestling-image">
+
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rock_and_Cena_shake_hands.jpg"
+                        alt="The Rock and John Cena">
+
+                </div>
+
+
+                <div class="wrestling-text">
+
+                    <h3>
+                        The People's Champion
+                    </h3>
+
+
+                    <p>
+
+                        Before becoming one of Hollywood's
+                        biggest stars, The Rock became one
+                        of WWE's most recognisable personalities.
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        His charisma, microphone skills and
+                        larger-than-life personality helped
+                        make "The Rock" a household name.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MOVIES
+    ================================================== -->
+
+    <section class="movies" id="movies">
+
+        <div class="container">
+
+            <h2 class="section-title">
+
+                Iconic
+
+                <span>
+                    Movies
+                </span>
+
+            </h2>
+
+
+            <div class="movie-grid">
+
+
+                <!-- FAST FIVE -->
+
+                <div class="movie">
+
+                    <div class="movie-image">
+
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fast_Five_Cast.jpg"
+                            alt="Dwayne Johnson and Fast Five cast">
+
+                    </div>
+
+
+                    <div class="movie-content">
+
+                        <h3>
+                            Fast Five
+                        </h3>
+
+                        <p>
+
+                            Johnson joined the Fast & Furious
+                            franchise as DSS agent Luke Hobbs.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- JUMANJI -->
+
+                <div class="movie">
+
+                    <div class="movie-image">
+
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dwayne_Johnson_and_Kevin_Hart%2C_Jumanji_-_Welcome_to_the_Jungle%2C_Koaloa_Ranch_in_Hawaii.jpg"
+                            alt="Dwayne Johnson and Kevin Hart during Jumanji">
+
+                    </div>
+
+
+                    <div class="movie-content">
+
+                        <h3>
+                            Jumanji: Welcome to the Jungle
+                        </h3>
+
+                        <p>
+
+                            Johnson stars as Dr. Smolder
+                            Bravestone alongside Kevin Hart,
+                            Jack Black and Karen Gillan.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BLACK ADAM -->
+
+                <div class="movie">
+
+                    <div class="movie-image">
+
+                        <img src="https://i.insider.com/635aa8f6ea35650019e077bb?format=jpeg&width=1200"
+                            alt="Dwayne Johnson as Black Adam">
+
+                    </div>
+
+
+                    <div class="movie-content">
+
+                        <h3>
+                            Black Adam
+                        </h3>
+
+                        <p>
+
+                            Johnson played the title character
+                            in the 2022 DC superhero film
+                            Black Adam.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FAN ZONE
+    ================================================== -->
+
+    <section class="fan-section" id="fan">
+
+        <div class="container">
+
+            <h2 class="section-title">
+
+                Fan
+
+                <span>
+                    Zone
+                </span>
+
+            </h2>
+
+
+            <div class="fan-box">
+
+                <p>
+
+                    What is your favourite thing about
+                    The Rock? Leave a message below!
+
+                </p>
+
+
+                <textarea id="fan-message" placeholder="Write your message here..."></textarea>
+
+
+                <br>
+
+
+                <button class="btn fan-btn" onclick="submitMessage()">
+
+                    👊 Send Message
+
+                </button>
+
+
+                <div id="message-result"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         IMAGE CREDITS
+    ================================================== -->
+
+    <div class="image-credits">
+
+        <p>
+
+            Some photographs are sourced from
+
+            <a href="https://commons.wikimedia.org/wiki/Category:Dwayne_Johnson" target="_blank">
+                Wikimedia Commons
+            </a>
+
+            and are used under their respective licences.
+
+        </p>
+
+
+        <p>
+
+            Please check the individual image pages
+            for attribution and licence requirements.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        <p>
+
+            Fan page dedicated to
+
+            <strong>
+                Dwayne "The Rock" Johnson
+            </strong>.
+
+        </p>
+
+
+        <p>
+
+            This is an unofficial fan website
+            created for educational purposes.
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+
+        /* =========================
+           RANDOM ROCK FACTS
+        ========================== */
+
+        const rockFacts = [
+
+            "Dwayne Johnson played college football at the University of Miami before becoming a professional wrestler.",
+
+            "The Rock originally competed in WWE under the name Rocky Maivia.",
+
+            "Johnson made his Hollywood breakthrough as the Scorpion King in The Mummy Returns.",
+
+            "The Rock became one of WWE's most famous personalities through his charisma and microphone skills.",
+
+            "Johnson is well known for his intense workout routines and dedication to fitness.",
+
+            "Dwayne Johnson starred as Luke Hobbs in the Fast & Furious film franchise.",
+
+            "Johnson starred as Dr. Smolder Bravestone in Jumanji: Welcome to the Jungle.",
+
+            "The Rock played the title character in the 2022 superhero movie Black Adam."
+
+        ];
+
+
+        let lastFact = -1;
+
+
+        function generateFact() {
+
+            let randomNumber;
+
+
+            do {
+
+                randomNumber =
+                    Math.floor(
+                        Math.random() *
+                        rockFacts.length
+                    );
+
+            }
+
+            while (
+                randomNumber === lastFact &&
+                rockFacts.length > 1
+            );
+
+
+            lastFact = randomNumber;
+
+
+            const factElement =
+                document.getElementById(
+                    "random-fact"
+                );
+
+
+            factElement.classList.remove(
+                "show"
+            );
+
+
+            /*
+                Forces browser to restart
+                the animation.
+            */
+
+            void factElement.offsetWidth;
+
+
+            factElement.textContent =
+                rockFacts[randomNumber];
+
+
+            factElement.classList.add(
+                "show"
+            );
+
+        }
+
+
+        /* =========================
+           KNOW YOUR ROLE
+        ========================== */
+
+        function revealRock() {
+
+            const message =
+                document.getElementById(
+                    "rock-message"
+                );
+
+
+            message.textContent =
+                "KNOW YOUR ROLE... AND SHUT YOUR MOUTH! 🤨";
+
+
+            message.classList.remove(
+                "show"
+            );
+
+
+            void message.offsetWidth;
+
+
+            message.classList.add(
+                "show"
+            );
+
+        }
+
+
+        /* =========================
+           FAN MESSAGE
+        ========================== */
+
+        function submitMessage() {
+
+            const message =
+                document
+                    .getElementById(
+                        "fan-message"
+                    )
+                    .value
+                    .trim();
+
+
+            const result =
+                document.getElementById(
+                    "message-result"
+                );
+
+
+            result.classList.remove(
+                "show"
+            );
+
+
+            if (message === "") {
+
+                result.textContent =
+                    "Please write a message first!";
+
+
+                result.classList.add(
+                    "show"
+                );
+
+
+                return;
+
+            }
+
+
+            result.textContent =
+                "🔥 Thanks for being a fan of The Rock!";
+
+
+            result.classList.add(
+                "show"
+            );
+
+
+            document
+                .getElementById(
+                    "fan-message"
+                )
+                .value = "";
+
+        }
+
+
+        /* =========================
+           THEME SWITCHER
+        ========================== */
+
+        function toggleTheme() {
+
+            const body =
+                document.body;
+
+
+            const button =
+                document.querySelector(
+                    ".theme-btn"
+                );
+
+
+            body.classList.toggle(
+                "electric-mode"
+            );
+
+
+            if (
+                body.classList.contains(
+                    "electric-mode"
+                )
+            ) {
+
+                button.textContent =
+                    "🔥 Rock Mode";
+
+            } else {
+
+                button.textContent =
+                    "⚡ Electric Mode";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
