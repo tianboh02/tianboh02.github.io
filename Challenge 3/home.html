@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Challenge 3 - CSS Land - Park Map</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body id="top">
+    <!-- DO NOT MODIFY home.html -->
+    <!-- Add all your styles in styles.css -->
+
+    <div class="container">
+        <header class="site-header">
+            <h1>CSS Land - Park Map</h1>
+            <p class="tagline">Find rides and landmarks around the park</p>
+        </header>
+
+        <main>
+            <section class="map-section">
+                <h2>Map</h2>
+
+                <!-- Map wrapper: make this the positioning context -->
+                <div class="map-wrapper">
+                    <!-- Map image -->
+                    <img class="park-map" src="map.png" alt="CSS Land Park Map">
+
+                    <!-- Attraction markers (place precisely on the map) -->
+                    <button class="marker" id="marker-atlantis" aria-label="Atlantis Adventure">
+                        <span class="tooltip">Atlantis Adventure</span>
+                    </button>
+
+                    <button class="marker" id="marker-gyro" aria-label="Gyro Drop">
+                        <span class="tooltip">Gyro Drop</span>
+                    </button>
+
+                    <button class="marker" id="marker-carousel" aria-label="Carousel Dreams">
+                        <span class="tooltip">Carousel Dreams</span>
+                    </button>
+
+                    <button class="marker" id="marker-river" aria-label="River Rapids">
+                        <span class="tooltip">River Rapids</span>
+                    </button>
+
+                    <!-- Legend box pinned to map corner -->
+                    <aside class="legend">
+                        <h3>Legend</h3>
+                        <ul>
+                            <li><span class="dot ride"></span> Ride</li>
+                            <li><span class="dot landmark"></span> Landmark</li>
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="transport">
+                <h2>Getting Here & Around</h2>
+                <div class="transport-columns">
+                    <!-- Left column: Transportation info -->
+                    <div class="transport-info">
+                        <p>Visiting CSS Land is easy with multiple transportation options:</p>
+
+                        <h3>Bus</h3>
+                        <p>Several direct bus routes stop right outside CSS Land, offering a convenient and affordable way to arrive from nearby neighborhoods.</p>
+
+                        <h3>Subway</h3>
+                        <p>The Blue Line connects directly to CSS Land Station, just a short walk from the main entrance. Trains run every 5 minutes during peak hours.</p>
+
+                        <h3>Car</h3>
+                        <p>For those driving, CSS Land offers a multi-level parking garage with direct access to the park. Parking discounts are available for season pass holders.</p>
+                    </div>
+
+                    <!-- Right column: Student discount info -->
+                    <div class="transport-discounts">
+                        <h3>Student Discount</h3>
+                        <p>Bring your valid school ID and choose one of the following perks:</p>
+                        <ul>
+                            <li>20% snacks & drinks voucher</li>
+                            <li>30% discount on souvenirs</li>
+                            <li>Free ride photo with purchase of any ride pass</li>
+                            <li>Buy 1 Get 1 free cotton candy at the main plaza</li>
+                            <li>Exclusive 10% off admission for up to 2 friends</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Fixed Back to Top button -->
+        <a href="#top" class="back-to-top" aria-label="Back to top">↑ Top</a>
+
+        <footer class="site-footer">
+            <p>© 2025 CSS Land</p>
+        </footer>
+    </div>
+</body>
+</html>
