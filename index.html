@@ -1,1 +1,602 @@
-<h1>Hello, I'm Tian Boh</h1>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaw Tian Boh | Software & Smart City Engineer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --bg-body: #1e293b;
+            /* Dark slate body background */
+            --card-bg: #0f172a;
+            /* Deep navy card fill */
+            --border-color: #334155;
+            /* Subtle border divider */
+            --accent-primary: #6366f1;
+            /* Electric Indigo */
+            --accent-secondary: #06b6d4;
+            /* Vivid Cyan */
+            --gradient-hero: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+        }
+
+        body {
+            background-color: var(--bg-body) !important;
+            color: #ffffff !important;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* -------------------------------------------------------------
+           KEYFRAME ANIMATIONS (SLOW & SUBTLE)
+        ------------------------------------------------------------- */
+        @keyframes borderFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes textShimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ANIMATED GRADIENT TEXT */
+        .text-gradient {
+            background: linear-gradient(90deg, #6366f1, #06b6d4, #3b82f6, #6366f1);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 12s ease infinite;
+        }
+
+        /* CARDS WITH HOVER EFFECT */
+        .card-futuristic {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-futuristic:hover {
+            transform: translateY(-4px);
+            border-color: #818cf8;
+            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.35) !important;
+        }
+
+        /* CAROUSEL WRAPPER WITH AMBIENT SLOW BORDER FLOW */
+        .hero-wrapper {
+            background: linear-gradient(90deg, #6366f1, #06b6d4, #3b82f6, #6366f1);
+            background-size: 300% 300%;
+            animation: borderFlow 18s ease infinite;
+            padding: 3px;
+            border-radius: 1.25rem;
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);
+        }
+
+        .hero-section {
+            background: var(--gradient-hero);
+            border-radius: 1.15rem;
+        }
+
+        /* BUTTONS */
+        .btn-hero-primary {
+            background: linear-gradient(90deg, #6366f1, #06b6d4, #6366f1);
+            background-size: 200% auto;
+            color: #ffffff !important;
+            font-weight: 700;
+            border: none;
+            padding: 12px 28px;
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-primary:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(6, 182, 212, 0.5);
+        }
+
+        .btn-hero-outline {
+            border: 2px solid #38bdf8;
+            color: #38bdf8 !important;
+            font-weight: 700;
+            padding: 10px 26px;
+            background: rgba(56, 189, 248, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-outline:hover {
+            background-color: #38bdf8;
+            color: #0f172a !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* CAROUSEL CONTROLS */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            padding: 1.25rem;
+            background-size: 50%;
+            transition: transform 0.2s ease;
+        }
+
+        .carousel-control-prev:hover .carousel-control-prev-icon,
+        .carousel-control-next:hover .carousel-control-next-icon {
+            transform: scale(1.1);
+            background-color: rgba(15, 23, 42, 1);
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #38bdf8;
+            height: 4px;
+        }
+
+        /* BADGES */
+        .badge-indigo {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.5);
+            font-weight: 600;
+        }
+
+        .badge-cyan {
+            background: rgba(6, 182, 212, 0.2);
+            color: #22d3ee;
+            border: 1px solid rgba(6, 182, 212, 0.5);
+            font-weight: 600;
+        }
+
+        /* NAVIGATION & ALERTS */
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.95) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-pills .nav-link.active {
+            background: linear-gradient(90deg, #6366f1, #06b6d4);
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .alert-futuristic {
+            background: var(--card-bg);
+            border: 1px solid #6366f1;
+            color: #ffffff;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: #38bdf8;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: #818cf8;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-gradient fs-3 font-monospace" href="#">
+                &lt;TB/&gt;
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center text-lg-start">
+                    <li class="nav-item"><a class="nav-link text-white active" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#skills">Skills</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                            data-bs-toggle="dropdown">More Info</a>
+                        <ul class="dropdown-menu dropdown-menu-end text-center text-lg-start">
+                            <li><a class="dropdown-item" href="#education">Education & Certs</a></li>
+                            <li><a class="dropdown-item" href="#volunteering">Volunteering & Leadership</a></li>
+                            <li><a class="dropdown-item" href="#contact">Contact Me</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ALERT -->
+    <!-- <div class="container mt-4">
+        <div class="alert alert-futuristic alert-dismissible fade show rounded-3 shadow-sm mb-0" role="alert">
+            <i class="bi bi-cpu-fill me-2 text-info fs-5"></i><strong class="text-white">Welcome!</strong> Information
+            Systems undergraduate at SMU and former GovTech SCTD Intern.
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div> -->
+
+    <!-- HEADER CAROUSEL -->
+    <section class="container my-4">
+        <div class="hero-wrapper">
+            <div id="portfolioCarousel" class="carousel slide overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-indicators mb-3">
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1"></button>
+                </div>
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active hero-section text-white p-5 text-center">
+                        <h1 class="display-4 fw-bold text-gradient mb-2">Khaw Tian Boh</h1>
+                        <p class="lead text-white max-w-lg mx-auto fw-normal mb-4">Software Engineer | Full-Stack &
+                            Mobile Developer | SMU Information Systems</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
+                            <button class="btn btn-hero-primary rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#quickSummaryModal">
+                                <i class="bi bi-lightning-charge-fill me-1"></i> Quick Overview
+                            </button>
+                            <a href="#contact" class="btn btn-hero-outline rounded-pill">
+                                <i class="bi bi-envelope-fill me-1"></i> Contact
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item hero-section text-white p-5 text-center">
+                        <h1 class="display-4 fw-bold text-gradient mb-2">Smart City & Mobile Tech</h1>
+                        <p class="lead text-white fw-normal mb-4">Experienced in Flutter, IoT Sensors, RFID, & Smart
+                            Facility Solutions</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
+                            <a href="#experience" class="btn btn-hero-outline rounded-pill">
+                                <i class="bi bi-arrow-down-circle me-1"></i> View Work Experience
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container my-5">
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="mb-5">
+            <div class="card card-futuristic rounded-4 p-4">
+                <h2 class="border-bottom border-secondary pb-3 fw-bold text-gradient"><i
+                        class="bi bi-person-badge-fill me-2"></i>About Me</h2>
+                <p class="fs-5 text-white mb-0 lh-base">
+                    I'm an Information Systems undergraduate at SMU and a Diploma in IT graduate (with Merit) from
+                    Temasek Polytechnic.
+                    I specialize in full-stack web and mobile application development, IoT sensor integrations, and
+                    building software solutions that deliver seamless user experiences.
+                </p>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="mb-5">
+            <h2 class="border-bottom border-secondary pb-3 mb-4 fw-bold text-gradient"><i
+                    class="bi bi-briefcase-fill me-2"></i>Professional Experience</h2>
+            <ul class="nav nav-pills mb-3" id="expTab" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active fw-bold rounded-pill px-4" id="govtech-tab" data-bs-toggle="tab"
+                        data-bs-target="#govtech" type="button">GovTech Singapore</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="expTabContent">
+                <div class="tab-pane fade show active" id="govtech">
+                    <div class="card card-futuristic rounded-4">
+                        <div class="card-body p-4">
+                            <div
+                                class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center mb-3">
+                                <div>
+                                    <h4 class="card-title fw-bold text-white mb-1">Smart City Technology Division (SCTD)
+                                        Intern</h4>
+                                    <h6 class="text-gradient fw-semibold mb-0">Government Technology Agency (GovTech)
+                                    </h6>
+                                </div>
+                                <span
+                                    class="badge badge-indigo mt-2 mt-md-0 fs-6 p-2 align-self-start align-self-md-auto">Apr
+                                    2022 - Jul 2023</span>
+                            </div>
+                            <ul class="text-white mb-0 lh-lg">
+                                <li>Cooperated with the SCTD department in nationwide government-level smart city
+                                    projects for PMOSG, MOE, and HSA.</li>
+                                <li>Diagnosed hardware and software issues during development and testing phases using
+                                    structured troubleshooting.</li>
+                                <li>Programmed mobile applications using Flutter Bloc, interacted with IoT sensors, and
+                                    tested/optimized RFID solutions.</li>
+                                <li>Initiated overall app architecture and UI improvements for the SMART FM Mobile
+                                    Application.</li>
+                                <li>Supported on-site deployment and configuration of hardware/software systems.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section id="projects" class="mb-5">
+            <h2 class="border-bottom border-secondary pb-3 mb-4 fw-bold text-gradient"><i
+                    class="bi bi-code-slash me-2"></i>Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <div class="card card-futuristic h-100 rounded-4">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold text-white mb-0">Healthy Living Mobile App</h5>
+                                <a href="#" class="text-gradient fs-5"><i class="bi bi-github"></i></a>
+                            </div>
+                            <h6 class="card-subtitle mb-3 text-info">Apr 2021 – Aug 2021</h6>
+                            <p class="card-text text-white flex-grow-1">Lifestyle/Health Application built using
+                                Flutter, Java, and Firebase for WorldSkills Singapore 2021 prep. Makes use of real-time
+                                phone sensors including accelerometer, GPS, and step tracking.</p>
+                            <div class="pt-2 d-flex flex-wrap gap-1">
+                                <span class="badge badge-indigo">Flutter</span>
+                                <span class="badge badge-cyan">Java</span>
+                                <span class="badge badge-indigo">Firebase</span>
+                                <span class="badge badge-cyan">Sensors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card card-futuristic h-100 rounded-4">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold text-white mb-0">Dip IT Windbreaker Event</h5>
+                                <a href="#" class="text-gradient fs-5"><i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                            <h6 class="card-subtitle mb-3 text-info">Jan 2022 – May 2022</h6>
+                            <p class="card-text text-white flex-grow-1">Head organizer for a diploma-wide pre-order
+                                event under TP-ITSIG. Managed end-to-end design iterations, supplier logistics, student
+                                administration, and financial management.</p>
+                            <div class="pt-2 d-flex flex-wrap gap-1">
+                                <span class="badge badge-cyan">Leadership</span>
+                                <span class="badge badge-indigo">Operations</span>
+                                <span class="badge badge-cyan">Finance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="fw-bold text-gradient mt-4 mb-3">Other Projects & Workshops</h4>
+            <div class="row g-3">
+                <div class="col-12 col-md-6">
+                    <div class="card card-futuristic rounded-4 p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="fw-bold text-white mb-0">Git & GitHub Workshop</h6>
+                            <small class="text-info">Nov 2021</small>
+                        </div>
+                        <p class="small text-white mb-2 mt-1">Initiated and conducted a hands-on introductory Git/GitHub
+                            workshop for TP IT students.</p>
+                        <div class="d-flex gap-1">
+                            <span class="badge badge-indigo">Git</span>
+                            <span class="badge badge-cyan">Teaching</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="mb-5">
+            <div class="card card-futuristic rounded-4 p-4">
+                <h2 class="border-bottom border-secondary pb-3 mb-3 fw-bold text-gradient"><i
+                        class="bi bi-tools me-2"></i>Technical Skills & Achievements</h2>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge badge-indigo fs-6 p-2">Dart & Flutter</span>
+                    <span class="badge badge-cyan fs-6 p-2">Angular / Angular-Ionic</span>
+                    <span class="badge badge-indigo fs-6 p-2">React</span>
+                    <span class="badge badge-cyan fs-6 p-2">Java</span>
+                    <span class="badge badge-indigo fs-6 p-2">JavaScript & TypeScript</span>
+                    <span class="badge badge-cyan fs-6 p-2">Python</span>
+                    <span class="badge badge-indigo fs-6 p-2">Sensors & RFID Tech</span>
+                </div>
+
+                <div>
+                    <button class="btn btn-hero-outline btn-sm rounded-pill mt-2" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseAcademic">
+                        Toggle Academic Achievements & Honors
+                    </button>
+                </div>
+                <div class="collapse mt-3" id="collapseAcademic">
+                    <div class="card card-futuristic rounded-3 p-3">
+                        <ul class="mb-0 text-white lh-lg">
+                            <li><strong>Diploma in IT with Merit</strong> (AY22/23) - GPA 3.91/4.0</li>
+                            <li><strong>Director's List Recipient:</strong> AY20/21 & AY21/22</li>
+                            <li><strong>ITSIG Treasurer / Liaison Officer:</strong> 2022–2023</li>
+                            <li><strong>WorldSkills Singapore 2021:</strong> Mobile Application Qualifying Round</li>
+                            <li><strong>Effective Bilingual:</strong> English & Mandarin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & VOLUNTEERING -->
+        <div class="row g-4 mb-5">
+            <section id="education" class="col-12 col-lg-6">
+                <div class="card card-futuristic rounded-4 p-4 h-100">
+                    <h3 class="fw-bold text-gradient border-bottom border-secondary pb-3 mb-3"><i
+                            class="bi bi-mortarboard-fill me-2"></i>Education & Certs</h3>
+
+                    <div class="mb-3">
+                        <h5 class="fw-bold text-white mb-1">Singapore Management University (SMU)</h5>
+                        <p class="text-white-50 mb-0">Bachelor of Science (Information Systems)</p>
+                        <small class="text-gradient fw-semibold">Aug 2025 – Jan 2029 (Expected)</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5 class="fw-bold text-white mb-1">Temasek Polytechnic (TP)</h5>
+                        <p class="text-white-50 mb-0">Diploma in Information Technology (Diploma with Merit)</p>
+                        <small class="text-gradient fw-semibold">Apr 2020 – Apr 2023 | GPA: 3.91 / 4.0</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5 class="fw-bold text-white mb-1">Bedok Green Secondary School</h5>
+                        <p class="text-white-50 mb-0">GCE 'O' Level (2019) | GCE 'N' Level (2018)</p>
+                        <small class="text-white-50">Jan 2015 – Dec 2019</small>
+                    </div>
+
+                    <hr class="border-secondary my-3">
+                    <h6 class="fw-bold text-uppercase text-gradient">Certifications</h6>
+                    <p class="mb-0 fw-bold text-white">University Preparatory Programme Foundation Mathematics</p>
+                    <p class="text-white-50 small mb-0">Temasek Polytechnic · Issued Mar 2022<br>Credential ID:
+                        TP-TSA-2022-1853</p>
+                </div>
+            </section>
+
+            <section id="volunteering" class="col-12 col-lg-6">
+                <div class="card card-futuristic rounded-4 p-4 h-100">
+                    <h3 class="fw-bold text-gradient border-bottom border-secondary pb-3 mb-3"><i
+                            class="bi bi-heart-fill me-2"></i>Volunteering & Leadership</h3>
+
+                    <div class="mb-3">
+                        <h6 class="fw-bold text-white mb-0">TP-ITSIG Treasurer / Liaison Officer</h6>
+                        <small class="text-gradient fw-semibold">Apr 2022 - Apr 2023</small>
+                        <p class="small text-white-50 mb-0">Managed club finances, hosted workshops, and led student
+                            event planning.</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="fw-bold text-white mb-0">SingHealth Polyclinics Volunteer</h6>
+                        <small class="text-gradient fw-semibold">Jan 2026 - Jun 2026 (80 hours)</small>
+                        <p class="small text-white-50 mb-0">Supported frontline patient care, self-service kiosks,
+                            e-services, and accessibility needs.</p>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-white mb-0">TP InfoTech Day 2023 Speaker & Ambassador</h6>
+                        <small class="text-gradient fw-semibold">2021 - 2023</small>
+                        <p class="small text-white-50 mb-0">Showcased smart facility management solutions to industry
+                            partners.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="mb-5">
+            <div class="card card-futuristic rounded-4 p-4">
+                <h2 class="border-bottom border-secondary pb-3 mb-4 fw-bold text-gradient"><i
+                        class="bi bi-envelope-open-fill me-2"></i>Get In Touch</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border border-secondary rounded-3 text-center h-100">
+                            <i class="bi bi-building fs-2 text-info mb-2 d-block"></i>
+                            <h6 class="fw-bold text-white mb-1">School Email</h6>
+                            <a href="mailto:tb.khaw.2025@computing.smu.edu.sg"
+                                class="contact-link small">tb.khaw.2025@computing.smu.edu.sg</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border border-secondary rounded-3 text-center h-100">
+                            <i class="bi bi-envelope-at-fill fs-2 text-info mb-2 d-block"></i>
+                            <h6 class="fw-bold text-white mb-1">Personal Email</h6>
+                            <a href="mailto:Khawtianboh.ktb@gmail.com"
+                                class="contact-link small">Khawtianboh.ktb@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border border-secondary rounded-3 text-center h-100">
+                            <i class="bi bi-linkedin fs-2 text-info mb-2 d-block"></i>
+                            <h6 class="fw-bold text-white mb-1">LinkedIn</h6>
+                            <a href="https://www.linkedin.com/in/khaw-tian-boh/" target="_blank"
+                                rel="noopener noreferrer" class="contact-link small">khaw-tian-boh</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="quickSummaryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content card-futuristic rounded-4 border-0">
+                <div class="modal-header border-bottom border-secondary">
+                    <h5 class="modal-title fw-bold text-gradient">Quick Resume Summary</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-white">
+                    <p class="mb-2"><strong>Name:</strong> Khaw Tian Boh</p>
+                    <p class="mb-2"><strong>Current Education:</strong> SMU B.S. Information Systems (2025–2029)</p>
+                    <p class="mb-2"><strong>Work Experience:</strong> GovTech SCTD Intern (1 yr 4 mos)</p>
+                    <p class="mb-2"><strong>Diploma:</strong> TP Diploma in IT with Merit (GPA: 3.91/4.0)</p>
+                    <p class="mb-2"><strong>School Email:</strong> <a href="mailto:tb.khaw.2025@computing.smu.edu.sg"
+                            class="contact-link">tb.khaw.2025@computing.smu.edu.sg</a></p>
+                    <p class="mb-2"><strong>Personal Email:</strong> <a href="mailto:Khawtianboh.ktb@gmail.com"
+                            class="contact-link">Khawtianboh.ktb@gmail.com</a></p>
+                    <p class="mb-0"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/khaw-tian-boh/"
+                            target="_blank" rel="noopener noreferrer" class="contact-link">in/khaw-tian-boh</a></p>
+                </div>
+                <div class="modal-footer border-top border-secondary">
+                    <button type="button" class="btn btn-hero-outline rounded-pill btn-sm"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4 mt-5 border-top border-secondary">
+        <div class="container">
+            <div class="mb-3 d-flex justify-content-center gap-3">
+                <a href="mailto:Khawtianboh.ktb@gmail.com" class="text-white-50 fs-4 contact-link"
+                    title="Personal Email"><i class="bi bi-envelope-fill"></i></a>
+                <a href="mailto:tb.khaw.2025@computing.smu.edu.sg" class="text-white-50 fs-4 contact-link"
+                    title="School Email"><i class="bi bi-mortarboard-fill"></i></a>
+                <a href="https://www.linkedin.com/in/khaw-tian-boh/" target="_blank" rel="noopener noreferrer"
+                    class="text-white-50 fs-4 contact-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <p class="mb-0 text-white-50">
+                &copy; 2026 Khaw Tian Boh. Built with <i class="bi bi-bootstrap-fill text-primary ms-1 me-1"></i>
+                <strong>Bootstrap 5</strong> and hosted on <i class="bi bi-github ms-1 me-1"></i> <strong>GitHub
+                    Pages</strong>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
